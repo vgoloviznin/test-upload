@@ -1,0 +1,12 @@
+# git ignore file
+
+packages
+**/bin
+**/obj
+*.suo
+*.user
+*.log
+*.idea
+.metadata/
+**/UploadedFiles
+
