@@ -1,0 +1,52 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/site.css" rel="stylesheet"/>
+
+    <script src="~/Scripts/modernizr-2.7.2.js"></script>
+
+</head>
+<body>
+    
+
+<h2>Upload the file</h2>
+
+<div>
+    
+    <label for="browse">Choose your awesome file!</label>
+    <input type="file" id="browse" />
+
+    <input type="button" value="Submit file" id="submit-btn"/>
+</div>
+
+
+    
+    
+<script type="text/javascript" src="scripts/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="scripts/plupload/plupload.full.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var uploader = new plupload.Uploader({
+                browse_button: 'browse', // this can be an id of a DOM element or the DOM element itself
+                url: 'http://localhost:50583/api/upload',
+                flash_swf_url: '/scripts/plupload/Moxie.swf',
+                silverlight_xap_url: '/scripts/plupload/Moxie.xap',
+                dragdrop: true,
+            });
+
+            uploader.init();
+
+            $("#submit-btn").on('click', function () {
+                uploader.start();
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>
